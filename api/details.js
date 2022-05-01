@@ -1,13 +1,9 @@
 import express from "express";
 import fetch from "node-fetch";
-import cors from "cors";
 
-const app = express();
+const router = express.Router();
 
-app.use(express.json());
-app.use(cors());
-
-app.post("/details", (req, res) => {
+router.post("/", (req, res) => {
   const link = req.body.magicEdenLink;
   const splitLink = link.split("/");
   const mintAddress = splitLink[splitLink.length - 1];
@@ -34,10 +30,4 @@ app.post("/details", (req, res) => {
   }
 });
 
-app.listen(3000, () => {
-  console.log("Server is running on port 3000");
-});
-
-
-// Export the REST API
-module.exports = app;
+export default router;
