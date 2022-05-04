@@ -3,7 +3,7 @@ import fetch from "node-fetch";
 
 const router = express.Router();
 
-router.post("/", (req, res) => {
+router.get("/", (req, res) => {
   const link = req.body.magicEdenLink;
   const splitLink = link.split("/");
   const mintAddress = splitLink[splitLink.length - 1];
