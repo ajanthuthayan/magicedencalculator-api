@@ -12,12 +12,7 @@ router.post("/", (req, res) => {
       );
       const data = await response.json();
 
-      if (data) {
-        const floorPrice = {
-          floorPrice: data.floorPrice,
-        };
-        res.send(floorPrice);
-      }
+      res.send(data)
     };
 
     fetchFloorPrice();
