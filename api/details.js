@@ -19,6 +19,7 @@ router.post("/", (req, res) => {
           name: data.name,
           royaltyFee: data.sellerFeeBasisPoints / 100,
           imageLink: data.image,
+          collectionName: data.collection,
         };
         res.send(details);
       }
